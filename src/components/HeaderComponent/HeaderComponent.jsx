@@ -5,8 +5,6 @@ export const Header = () => {
     <header className="header">
         <p className="headerTitle">
             IMAGE
-        </p>
-        <p className='headerTitle'>
             FINDER
         </p>
         <p className="headerText">

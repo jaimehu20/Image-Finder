@@ -37,3 +37,24 @@
     right: 2em;
     top: 0.4em;
 }
+
+@media only screen and (min-width: 1000px){
+    .headerSearchBar {
+        display: none;
+    }
+    .headerSearchBarIcon {
+        display: none;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 3em;
+        width: 50%;
+    }
+    .headerTitle {
+    }
+    .headerText {
+     width: 54%;
+    }
+}
