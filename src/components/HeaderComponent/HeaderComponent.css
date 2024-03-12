@@ -1,0 +1,39 @@
+.header {
+    padding-top: 0.5em;
+    font-family: 'nats';
+    text-align: center;
+}
+
+.headerTitle {
+    padding-left: 1.5em;
+    font-family: 'nats';
+    font-size: 40px;
+    margin-top: 0;
+    height: 1em;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+.headerText {
+    width: 43%;
+    padding-left: 3.2em;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding-top: 1em;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.headerSearchBar {
+    border: 1px solid black;
+    border-radius: 2em;
+    width: 19em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.headerSearchBarIcon {
+    position: relative;
+    right: 2em;
+    top: 0.4em;
+}
