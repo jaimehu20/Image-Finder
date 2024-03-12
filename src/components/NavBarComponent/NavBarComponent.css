@@ -1,0 +1,74 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3.6em;
+    background: #F6B9B1;
+    box-shadow: 0px 3px 6px 0px #0000004A;
+    font-family: 'nats';
+}
+
+.navBarContainer {
+    display: none;
+}
+
+
+.navBarTitle {
+    font-size: 20px;
+    padding-left: 1em;
+}
+
+.navBarSearchBar {
+    display: none;
+}
+
+.navBarBurguer {
+    padding-right: 2em;
+}
+
+.navBarBurguerOptions {
+    display: none;
+}
+
+@media only screen and (min-width: 1000px){
+    .navBarContainer {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        width: 74%;
+    }
+
+    .navBarTitle {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 20%;
+    }
+
+    .navBarSearchBar {
+        display: block;
+        height: 2em;
+        width: 75%;
+        padding-bottom: 0;
+        padding-top: 0;
+        border: 1px solid black;
+        border-radius: 2em;
+    }
+
+    .navBarSearchBarIcon {
+        position: relative;
+        right: 3em;
+    }
+
+
+    .navBarBurguer {
+        display: none;
+    }
+    .navBarBurguerOptions {
+        display: flex;
+        padding-right: 2em;
+        gap: 2em;
+        font-size: 24px;
+    }
+}
