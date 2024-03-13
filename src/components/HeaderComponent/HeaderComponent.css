@@ -38,12 +38,21 @@
     top: 0.4em;
 }
 
+.headerSliderContainer {
+    display: none;
+}
+
+
 @media only screen and (min-width: 1000px){
     .headerSearchBar {
-        display: none;
+        position: relative;
+        left: 4em;
+        top: 3.8em;
+        width: 44em;
     }
     .headerSearchBarIcon {
-        display: none;
+        left: 38.5em;
+        top: 1.5em;
     }
     .header {
         display: flex;
@@ -52,9 +61,20 @@
         padding-top: 3em;
         width: 50%;
     }
-    .headerTitle {
-    }
+    
     .headerText {
      width: 54%;
+     padding-top: 0;
+    }
+    .headerSliderContainer{
+        display: block;
+        position: relative;
+        bottom: 15em;
+        left: 21em;
+    }
+    .headerSliderImage{
+        width: 19em;
+        height: 14em;
+        border-radius: 2em;
     }
 }
