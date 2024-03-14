@@ -2,6 +2,7 @@
     padding-top: 0.5em;
     font-family: 'nats';
     text-align: center;
+    padding-bottom: 4em;
 }
 
 .headerTitle {
@@ -45,36 +46,45 @@
 
 @media only screen and (min-width: 1000px){
     .headerSearchBar {
-        position: relative;
-        left: 4em;
-        top: 3.8em;
-        width: 44em;
+        width: 49em;
     }
     .headerSearchBarIcon {
-        left: 38.5em;
-        top: 1.5em;
+        position: relative;
+        overflow: visible;
+        left: 39em;
+        bottom: 1.5em;
+        top: auto;
     }
     .header {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-top: 3em;
-        width: 50%;
+        width: 60%;
+        margin-top: 2em;
+        height: 15em;
+        padding-top: 0;
+        max-width: 38em;
+    }
+    .headerTitle{
+        padding-left: 0;
+        font-size: 75px;
     }
     
     .headerText {
-     width: 54%;
-     padding-top: 0;
+     width: 67%;
+     padding-top: 0.5em;
+     padding-left: 0;
+     padding-bottom: 0.4em;
     }
+    
     .headerSliderContainer{
         display: block;
         position: relative;
-        bottom: 15em;
-        left: 21em;
+        bottom: 14.5em;
+        left: 15em;
     }
     .headerSliderImage{
-        width: 19em;
-        height: 14em;
+        width: 14em;
+        height: 10em;
         border-radius: 2em;
     }
 }

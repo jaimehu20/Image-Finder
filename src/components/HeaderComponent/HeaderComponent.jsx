@@ -4,8 +4,8 @@ export const Header = () => {
     return <>
     <header className="header">
         <p className="headerTitle">
-            IMAGE
-            FINDER
+            Image
+            Finder
         </p>
         <p className="headerText">
             Discover a world of limitless visual inspiration in our free photo library: where creativity finds its home and images speak for themselves.
