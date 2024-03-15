@@ -1,7 +1,8 @@
+import { Footer } from "../components/FooterComponent/FooterComponent";
 import { Header } from "../components/HeaderComponent/HeaderComponent"
 import { ImageSection } from "../components/ImageSectionComponent/ImageSectionComponent";
 import { NavBar } from "../components/NavBarComponent/NavBarComponent"
-import './rootDiv.css';
+import '../rootDiv.css';
 
 
 export const IndexPage = () => {
@@ -10,6 +11,7 @@ export const IndexPage = () => {
         <NavBar/>
         <Header/>
         <ImageSection/>
+        <Footer/>
     </div>
     </>
 }

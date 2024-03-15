@@ -5,14 +5,23 @@
     padding-bottom: 4em;
 }
 
+.header--mod {
+    align-self: flex-start;
+}
 .headerTitle {
-    padding-left: 1.5em;
+    padding-left: 1em;
     font-family: 'nats';
-    font-size: 40px;
-    margin-top: 0;
-    height: 1em;
+    font-size: 4em;
+    font-weight: 400;
+    line-height: 0.8em;
+    word-break: break-word;
     margin-bottom: 0;
     text-align: justify;
+    width: 40%;
+    max-width: 3em;
+}
+.headerTitle--mod {
+    width: 84%;
 }
 
 .headerText {
@@ -20,7 +29,9 @@
     padding-left: 3.2em;
     font-size: 1.2em;
     font-weight: 400;
-    padding-top: 1em;
+    padding-top: 0;
+    padding-bottom: 1.5em;
+    line-height: 1.5em;
     text-align: left;
     margin-bottom: 0;
 }
@@ -37,6 +48,11 @@
     position: relative;
     right: 2em;
     top: 0.4em;
+    cursor: pointer;
+}
+
+.headerSearchBarIcon--mod {
+    right: 1.7em;
 }
 
 .headerSliderContainer {
@@ -60,13 +76,18 @@
         flex-direction: column;
         width: 60%;
         margin-top: 2em;
-        height: 15em;
         padding-top: 0;
+        padding-bottom: 0;
         max-width: 38em;
+    }
+
+    .header--mod {
+        padding-left: 6em;
     }
     .headerTitle{
         padding-left: 0;
-        font-size: 75px;
+        width: 100%;
+        max-width: none;
     }
     
     .headerText {
@@ -86,5 +107,6 @@
         width: 14em;
         height: 10em;
         border-radius: 2em;
+        object-fit: cover;
     }
 }

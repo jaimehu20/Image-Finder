@@ -63,6 +63,7 @@
         display: block;
         position: relative;
         right: 3em;
+        cursor: pointer;
     }
 
 
