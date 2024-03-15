@@ -1,4 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux';
 import './/ImageSectionComponent.css'
+import { GetPhotoError, GetPhotoStatus, getPhoto } from '../../features/SearchSlice/searchSlice';
+import { useEffect } from 'react';
+import { GetPhotosThunk } from '../../app/searchThunk';
+
+
+
 
 export const ImageSection = () => {
     const elementos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -14,7 +21,28 @@ export const ImageSection = () => {
             </svg>
         </div>
     ));
+    const photoList = useSelector(getPhoto)
+    const photoStatus = useSelector(GetPhotoStatus)
+    const photoError = useSelector(GetPhotoError)
+        const dispatch = useDispatch()
+    useEffect(() => {
+        if (photoStatus === "pending"){
+            // NO HAGO PETICION
+        } else if (photoStatus === "fulfilled"){
+            // NO HAGO LA PETICIÓN, YA ESTÁ HECHA
+        } else if (photoStatus === "idle"){
+            dispatch(GetPhotosThunk());
+        }
+    },)
+    const photoInfo = useSelector(getPhoto)
+    const srcImage = photoInfo[0];
+    
+    const srcList = srcImage.forEach(element => {
+        return element.urls.small
+    });
+   
 
+    
     return (
         <section className='ImageSection'>
             {elementosDiv}

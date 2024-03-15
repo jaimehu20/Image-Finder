@@ -20,7 +20,7 @@ export const NavBar = () => {
                     Explore
                 </p>
                 <p>
-                    <a target='_blank' href="">My Gallery</a>
+                    My Gallery
                 </p>
             </div>
         </nav>
