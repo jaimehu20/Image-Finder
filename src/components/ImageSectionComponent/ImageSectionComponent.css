@@ -3,19 +3,27 @@
     height: 20em;
     margin-bottom: 4em;
     border-radius: 2em;
+    object-fit: cover;
 }
-
+.ImageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
 .ImageContainerLike {
     position: absolute;
     margin-top: 12em;
     margin-right: 3em;
     cursor: pointer;
+    width: 2em;
 }
 .ImageContainerDownload {
     position: absolute;
     margin-top: 12.1em;
     margin-right: 0.2em;
     cursor: pointer;
+    width: 2em;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -37,9 +45,24 @@
         object-fit: cover;
         border-radius: 0;
     }
+    .ImageContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+    }
+    .ImageContainerLike {
+        margin-right: 1.8em;
+        width: 1em;
+    }
+
+    .ImageContainerDownload {
+        width: 1.2em;
+    }
 
     .ImageContainer-1 {
         grid-row: 1 / span 2;
+        justify-content: end;
     }
  
     .ImageContainer-4 {

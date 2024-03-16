@@ -17,10 +17,10 @@ export const NavBar = () => {
             </svg>
             <div className="navBarBurguerOptions">
                 <p>
-                    Explore
+                    <a className="navBarBurguerOptionsText" href="/">Explore</a>
                 </p>
                 <p>
-                    My Gallery
+                    <a className="navBarBurguerOptionsText" href="/MyGallery">My Gallery</a>
                 </p>
             </div>
         </nav>

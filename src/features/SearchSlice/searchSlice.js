@@ -12,7 +12,7 @@ export const searchSlice = createSlice({
     },
     reducers: {
         search: (state, action) => {
-            state.data = [...state.data, ...state.payload]
+            state.data = [...state.data,state.payload]
         }
     },
     extraReducers: (builder) => {
@@ -22,7 +22,7 @@ export const searchSlice = createSlice({
             state.status = "rejected"
             state.error = action.payload.error
         }).addCase(GetPhotosThunk.fulfilled, (state,action) => {
-            state.data = [...state.data,action.payload]
+            state.data = action.payload
             state.status = "fulfilled"
         })
     }
