@@ -42,6 +42,7 @@
 .navBarCloseIconEnabled {
     display: block;
     padding-right: 2em;
+    cursor: pointer;
 }
 
 .navBarBurguerOptions {

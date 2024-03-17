@@ -18,6 +18,10 @@
     cursor: pointer;
     width: 2em;
 }
+
+.liked {
+    fill: red;
+}
 .ImageContainerDownload {
     position: absolute;
     margin-top: 12.1em;

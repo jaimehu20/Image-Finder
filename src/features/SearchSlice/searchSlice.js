@@ -2,7 +2,6 @@
 import { GetPhotosThunk } from "../../app/searchThunk"
 import { createSlice } from "@reduxjs/toolkit"
 
-
 export const searchSlice = createSlice({
     name: "search",
     initialState: {
@@ -12,7 +11,7 @@ export const searchSlice = createSlice({
     },
     reducers: {
         search: (state, action) => {
-            state.data = [...state.data,state.payload]
+            state.data = [...state.data,action.payload]
         }
     },
     extraReducers: (builder) => {
