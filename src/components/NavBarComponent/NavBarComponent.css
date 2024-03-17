@@ -28,10 +28,45 @@
 
 .navBarBurguer {
     padding-right: 2em;
+    cursor: pointer;
+}
+
+.navBarBurguerDisabled {
+    display: none;
+}
+
+.navBarCloseIcon {
+    display: none;
+}
+
+.navBarCloseIconEnabled {
+    display: block;
+    padding-right: 2em;
 }
 
 .navBarBurguerOptions {
     display: none;
+}
+
+.menuMobileOptions{
+    display: none;
+}
+
+.menuMobileOptionsEnabled{
+    width: 100%;
+    background: #F6B9B1;
+    font-size: 1.5em;
+    display: block;
+}
+
+.menuMobileOptionsText {
+    padding-left: 2em;
+}
+
+.menuMobileOptionTextItem {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1000px){
@@ -66,10 +101,10 @@
         cursor: pointer;
     }
 
-
     .navBarBurguer {
         display: none;
     }
+
     .navBarBurguerOptions {
         display: flex;
         padding-right: 2em;
@@ -80,5 +115,17 @@
     .navBarBurguerOptionsText {
         text-decoration: none;
         color: black;
+    }
+
+    .navBarCloseIconEnabled {
+        display: none;
+    }
+
+    .menuMobileOptions{
+        display: none;
+    }
+
+    .menuMobileOptionsEnabled{
+        display: none;
     }
 }

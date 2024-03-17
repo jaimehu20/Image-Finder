@@ -1,9 +1,6 @@
-import { useDispatch } from 'react-redux';
 import '../HeaderComponent/HeaderComponent.css';
-import { search } from '../../features/SearchSlice/searchSlice';
 
 export const Header = () => {
-    const dispatch = useDispatch()
     return <>
     <header className="header">
         <h1 className="headerTitle">

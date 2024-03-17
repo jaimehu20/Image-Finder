@@ -1,4 +1,47 @@
 .GalleryImageSectionImg {
-   width: 2em; 
+   width: 16em;
+   height: 20em;
+   margin-bottom: 4em;
+   border-radius: 2em;
+   object-fit: cover; 
     
+}
+
+.GalleryImageContainer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: end;
+}
+
+@media only screen and (min-width: 1000px) {
+   .GalleryImageSection {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 1em;
+   }
+
+   .GalleryImageSectionImg {
+      border-radius: 0; 
+       
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
