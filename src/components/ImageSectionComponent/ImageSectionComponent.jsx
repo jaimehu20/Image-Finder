@@ -1,31 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './/ImageSectionComponent.css'
 import { GetPhotoStatus, getPhoto } from '../../features/SearchSlice/searchSlice';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { GetPhotosThunk } from '../../app/searchThunk';
-import { addFavorite } from '../../features/FavoriteSlice/favoriteSlice';
+import {  addFavorite } from '../../features/FavoriteSlice/favoriteSlice';
 
 export const ImageSection = () => {
     const photoList = useSelector(getPhoto)
     const photoStatus = useSelector(GetPhotoStatus)
     const dispatch = useDispatch()
- 
+
     useEffect(() => {
-        if (photoStatus === "pending"){
-           // console.log(photoStatus)
-        } else if (photoStatus === "fulfilled"){
-           // console.log(photoStatus)
-        } else if (photoStatus === "idle"){
+        if (photoStatus === "idle"){
             dispatch(GetPhotosThunk());
         }
-        const likedIcon = document.getElementById('likedIcon');
-        if (likedIcon) {
-            likedIcon.addEventListener("click", () => {
-                likedIcon.classList.toggle('liked')
-            })
-        }
-    },[dispatch, photoList, photoStatus])
-    
+        },[dispatch, photoList, photoStatus])
+
 
     const pictures = photoList.map((imagen, index) => {
         const imageInfo = {
