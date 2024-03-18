@@ -4,16 +4,24 @@ import { createSlice } from "@reduxjs/toolkit";
 export const favoriteSlice = createSlice({
     name: "favorite",
     initialState: {
-        favoritePictures: []
+        favoritePictures: JSON.parse(localStorage.getItem("favoritePhotos")) || []
     },
     reducers: {
         addFavorite: (state, action) => {
-            state.favoritePictures = [...state.favoritePictures,action.payload]
-            localStorage.setItem("favoritePhotos", JSON.stringify(state.favoritePictures))
+            let exists = false
+            state.favoritePictures && state.favoritePictures.map((element, index) => {
+                if (element.url  === action.payload.url){
+                    exists = true
+                }
+            })
+            if (!exists) {
+                state.favoritePictures = [...state.favoritePictures,action.payload]
+                localStorage.setItem("favoritePhotos", JSON.stringify(state.favoritePictures))
+            }
         },
         removeFavorite: (state, action) => {
-            state.favoritePictures = [state.favoritePictures, action.payload]
-            localStorage.removeItem("favoritePhotos");
+           state.favoritePictures = state.favoritePictures.filter((photo) => photo.url !== action.payload )
+           localStorage.setItem("favoritePhotos", JSON.stringify(state.favoritePictures))
         }
     }
 })

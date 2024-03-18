@@ -19,9 +19,10 @@
     width: 2em;
 }
 
-.liked {
+.likedIcon {
     fill: red;
 }
+
 .ImageContainerDownload {
     position: absolute;
     margin-top: 12.1em;
