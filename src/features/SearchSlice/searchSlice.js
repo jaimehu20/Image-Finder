@@ -12,7 +12,7 @@ export const searchSlice = createSlice({
     reducers: {
         search: (state, action) => {
             state.data = [...state.data,action.payload]
-        }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(GetPhotosThunk.pending, (state,action) => {

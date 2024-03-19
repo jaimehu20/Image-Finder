@@ -34,12 +34,14 @@
 @media only screen and (min-width: 1000px) {
     .ImageSection {
         display: grid;
-        grid-template-columns: 40% 26% 26%;
-        grid-template-rows: 8% 8% 8% 8% auto 80%;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
         justify-content: center;
         gap: 0.5em;
         padding: 0.5em;
         width: 50%;
+        position: relative;
+        bottom: 9em;
     }
     
     .ImageSectionImg {
@@ -65,24 +67,9 @@
         width: 1.2em;
     }
 
-    .ImageContainer-1 {
-        grid-row: 1 / span 2;
-        justify-content: end;
-    }
- 
-    .ImageContainer-4 {
-        grid-column: 2 / span 2;
-    }
-
-    .ImageContainer-7 {
-        grid-column: 3;
-        grid-row: 3 / span 2;
-    }
-
     .ImageContainer-10 {
         grid-column: 1 / span 3;
-        grid-row: span 2;
-        height: 12%;
+        height: 45%;
     }
 
 }

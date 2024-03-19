@@ -7,8 +7,12 @@ import { useState } from 'react';
 
 let favoriteList = JSON.parse(localStorage.getItem("favoritePhotos"));
 
-export const GalleryImageSection = () => {
+export const GalleryImageSection = ({inputData}) => {
     const dispatch = useDispatch()
+    const [photoFilter,setPhotoFilter] = useState([]);
+
+    const itemExists = localStorage.length > 0
+    console.log(itemExists)
 
     // BORRAR FOTO AL DESMARCAR COMO FAVORITA
     const [hidden, setHidden] = useState(Array(favoriteList.length).fill(false));
