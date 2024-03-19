@@ -11,7 +11,7 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
-   align-items: end;
+   align-items: center;
 }
 
 .GalleryImageContainerDisabled {
@@ -30,12 +30,14 @@
 }
 
 .ImageContainerLike--mod {
-   margin-top: 8em;
+   margin-top: 6em;
+   margin-left: 13em;
 }
 
 .ImageContainerDownload--mod {
-   margin-top: 8em;
+   margin-top: 6em;
    margin-right: 0.5em;
+   margin-left: 14em;
 }
 
 .infoData {
@@ -43,10 +45,21 @@
    margin-bottom: 0;
 }
 
-.NoFavoritesFoundMessage {
-   padding-bottom: 8em;
-   font-size: 1.5em;
-   width: 50%;
+.GalleryImageInfoEditor {
+   display: none;
+}
+
+.GalleryImageInfoEditorEnabled {
+   display: block;
+   position: relative;
+   bottom: 1.2em;
+}
+
+.GalleryImageInfoEditorSaveIcon {
+   width: 1em;
+   vertical-align: sub;
+   padding-left: 0.1em;
+   cursor: pointer;
 }
 
 @media only screen and (min-width: 1000px) {
