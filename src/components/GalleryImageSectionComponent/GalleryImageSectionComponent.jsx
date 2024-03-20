@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import './GalleryImageSectionComponent.css'
 import { removeFavorite } from '../../features/FavoriteSlice/favoriteSlice';
 import { editDescription } from '../../features/FavoriteSlice/favoriteSlice';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 let favoriteList = JSON.parse(localStorage.getItem("favoritePhotos"));
@@ -10,10 +10,7 @@ let favoriteList = JSON.parse(localStorage.getItem("favoritePhotos"));
 export const GalleryImageSection = ({inputData}) => {
     const dispatch = useDispatch()
     const [photoFilter,setPhotoFilter] = useState([]);
-
-    const itemExists = localStorage.length > 0
-    console.log(itemExists)
-
+    
     // BORRAR FOTO AL DESMARCAR COMO FAVORITA
     const [hidden, setHidden] = useState(Array(favoriteList.length).fill(false));
     const toggleImg = (index) => {
@@ -36,7 +33,21 @@ export const GalleryImageSection = ({inputData}) => {
         setInputValue(e.target.value)
     }
 
-        const showPic = favoriteList.map((favImg, index) => {
+    // COMPRUEBA SI EN LOCALSTORAGE HAY DATOS Y SI LOS HAY, LOS FILTRA
+    let exists = localStorage.getItem('favoritePhotos');
+    useEffect(() => {
+        if (exists) {
+            let localData = JSON.parse(exists);
+            if (Array.isArray(localData) && localData.length !== 0) {
+                let filteredData = favoriteList.filter(photo => photo.description.includes(inputData) );
+                setPhotoFilter(filteredData);
+            } else {
+                console.log('El item es un array vacío en el localStorage');
+            }
+        } 
+    }, [exists, inputData, favoriteList])
+   
+        const showPic = photoFilter.map((favImg, index) => {
             return (
                 <div key={index} className={!hidden[index] ? 'GalleryImageContainer' : 'GalleryImageContainerDisabled'}>
                     <img  className="GalleryImageSectionImg" src={favImg.url}/>

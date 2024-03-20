@@ -2,8 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import './/ImageSectionComponent.css'
 import { GetPhotoStatus, getPhoto } from '../../features/SearchSlice/searchSlice';
 import { useEffect, useState } from 'react';
-import { GetPhotosThunk } from '../../app/searchThunk';
 import {  addFavorite } from '../../features/FavoriteSlice/favoriteSlice';
+import { GetPhotosThunk } from '../../features/APIThunk/searchThunk';
+
 
 export const ImageSection = ({ inputData }) => {
     const photoList = useSelector(getPhoto)
@@ -13,7 +14,7 @@ export const ImageSection = ({ inputData }) => {
 
     useEffect(() => {
         if (photoStatus === "idle"){
-            dispatch(GetPhotosThunk());
+            dispatch(GetPhotosThunk);
         }
         },[dispatch, photoList, photoStatus])
 

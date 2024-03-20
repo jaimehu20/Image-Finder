@@ -21,7 +21,6 @@ export const favoriteSlice = createSlice({
         },
         removeFavorite: (state, action) => {
            state.favoritePictures = state.favoritePictures.filter((photo) => photo.url !== action.payload)
-           console.log(state.favoritePictures)
            localStorage.setItem("favoritePhotos", JSON.stringify(state.favoritePictures))
         },
         editDescription: (state, action) => {
