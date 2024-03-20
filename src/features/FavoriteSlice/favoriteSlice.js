@@ -24,8 +24,17 @@ export const favoriteSlice = createSlice({
            localStorage.setItem("favoritePhotos", JSON.stringify(state.favoritePictures))
         },
         editDescription: (state, action) => {
-            action.payload.imgData.description = action.payload.updatedInfo
-            state.favoritePictures = action.payload.imgData
+            state.favoritePictures.map((element, index) => {
+                console.log(element)
+                console.log(element.url)
+                console.log(action.payload)
+                if (element.url === action.payload.imgData.url){
+                    let newArray= state.favoritePictures.splice(index, 1)
+                    action.payload.imgData.description = action.payload.updatedInfo
+                    state.favoritePictures = [...newArray,action.payload.imgData]
+                    localStorage.setItem("favoritePhotos", JSON.stringify([...newArray,action.payload.imgData]))
+                }
+            })
         }
     }
 })
