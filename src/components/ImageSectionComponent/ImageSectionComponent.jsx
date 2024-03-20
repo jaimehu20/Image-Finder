@@ -31,6 +31,8 @@ export const ImageSection = ({ inputData }) => {
         if (inputData && photoStatus === "fulfilled") {
             const filteredPhotos = photoList.filter(photo => photo.alt_description.includes(inputData));
             setPhotoFilter(filteredPhotos);
+        } else if (!inputData){
+            setPhotoFilter(photoList);
         }
     }, [inputData, photoStatus, photoList])
 
