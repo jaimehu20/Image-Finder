@@ -17,7 +17,7 @@ FUNCIONALIDADES
 - DESCRIPCIONES: En la sección My Gallery, se mostrará nuestras imágenes marcadas como favoritos junto con información relevante (descripción, width, height, likes y fecha de creación). Si                  lo deseas, puedes cambiar la descripción de la imagen pulsando en el botón del lápiz de cada foto.
 - FILTRADO FAVORITOS: Al igual que en la página principal, también tenemos barras de búsqueda en esta sección para filtrar nuestras fotos favoritas a través de su descripción.
 
-* BONUS *
+*BONUS*
 - TOASTIFY: Se agrega toastify para crear alerts cuando se agregan o eliminan imágenes de favoritos. 
 
 Si quieres acceder al proyecto, este es su enlace:
