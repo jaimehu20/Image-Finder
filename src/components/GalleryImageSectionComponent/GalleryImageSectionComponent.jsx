@@ -88,7 +88,7 @@ export const GalleryImageSection = ({inputData}) => {
          })
          return (
             <section className="GalleryImageSection">
-                {showPic}
+                {photoFilter.length === 0 ? <div><p>Oops! You dont have any favorite photos</p></div> : showPic}
                 <ToastContainer/>
             </section>
          )
