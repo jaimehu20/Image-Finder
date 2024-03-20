@@ -1,4 +1,5 @@
-import { GetPhotosThunk } from '../../features/APIThunk/searchThunk';
+
+import { GetPhotosThunk } from "../../app/searchThunk"
 import { createSlice } from "@reduxjs/toolkit"
 
 export const searchSlice = createSlice({

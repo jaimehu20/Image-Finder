@@ -3,6 +3,8 @@ import './GalleryImageSectionComponent.css'
 import { removeFavorite } from '../../features/FavoriteSlice/favoriteSlice';
 import { editDescription } from '../../features/FavoriteSlice/favoriteSlice';
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 let favoriteList = JSON.parse(localStorage.getItem("favoritePhotos"));
@@ -10,6 +12,7 @@ let favoriteList = JSON.parse(localStorage.getItem("favoritePhotos"));
 export const GalleryImageSection = ({inputData}) => {
     const dispatch = useDispatch()
     const [photoFilter,setPhotoFilter] = useState([]);
+    const notify = () => toast("Image erased from favorites");
     
     // BORRAR FOTO AL DESMARCAR COMO FAVORITA
     const [hidden, setHidden] = useState(Array(favoriteList.length).fill(false));
@@ -51,7 +54,7 @@ export const GalleryImageSection = ({inputData}) => {
             return (
                 <div key={index} className={!hidden[index] ? 'GalleryImageContainer' : 'GalleryImageContainerDisabled'}>
                     <img  className="GalleryImageSectionImg" src={favImg.url}/>
-                    <svg className="ImageContainerLike ImageContainerLike--mod" onClick={() => dispatch(removeFavorite(favImg.url))}width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="ImageContainerLike ImageContainerLike--mod" onClick={() => {dispatch(removeFavorite(favImg.url)), notify()}}width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path onClick={() => toggleImg(index)} d="M45.924 13.744C45.2525 6.67485 40.0215 1.54601 33.4749 1.54601C29.1135 1.54601 25.1201 3.79099 22.8731 7.38904C20.6464 3.74445 16.8167 1.54517 12.5251 1.54517C5.9795 1.54517 0.747578 6.674 0.0770007 13.7432C0.0239207 14.0554 -0.193707 15.6988 0.468023 18.3787C1.42169 22.2441 3.62451 25.7601 6.83674 28.5441L22.8625 42.4548L39.1633 28.545C42.3756 25.7601 44.5784 22.245 45.532 18.3787C46.1938 15.6996 45.9761 14.0563 45.924 13.744Z" stroke="black" fill="red"/>
                     </svg>
                     <svg className="ImageContainerDownload ImageContainerDownload--mod" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,6 +89,7 @@ export const GalleryImageSection = ({inputData}) => {
          return (
             <section className="GalleryImageSection">
                 {showPic}
+                <ToastContainer/>
             </section>
          )
     }
